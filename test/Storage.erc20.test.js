@@ -36,12 +36,17 @@ describe('Storage and Upgradability Patterns', () => {
       let myToken1 = await MyOwnableToken.new(
         publicStorage.address, mintableTokenDelegate.address, 'MyToken1', 'MTKONE', 18
       )
+      await myToken1.setOwner()
+
       let myToken2 = await MyOwnableToken.new(
         publicStorage.address, mintableTokenDelegate.address, 'MyToken2', 'MTKTWO', 18
       )
+      await myToken2.setOwner()
+
       let myToken3 = await MyOwnableToken.new(
         publicStorage.address, mintableTokenDelegate.address, 'MyToken3', 'MTKTHREE', 18
       )
+      await myToken3.setOwner()
 
       myToken1 = tokenObject(myToken1)
       myToken2 = tokenObject(myToken2)
