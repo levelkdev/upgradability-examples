@@ -1,23 +1,23 @@
 pragma solidity ^0.4.18;
 
 import "zeppelin-solidity/contracts/math/SafeMath.sol";
-import "levelk-upgradability-contracts/contracts/StorageConsumer/StorageConsumerLib.sol";
+import "levelk-upgradability-contracts/contracts/Storage/BaseStorage.sol";
 
 library StandardTokenLib {
   using SafeMath for uint256;
 
   function getAllowed(
-    StorageConsumerLib.Storage storage self,
+    BaseStorage self,
     address owner,
     address spender
   )
     public view returns (uint256)
   {
-    return self.store.getUint(keccak256("allowed", owner, spender));
+    return self.getUint(keccak256("allowed", owner, spender));
   }
 
   function addAllowed(
-    StorageConsumerLib.Storage storage self,
+    BaseStorage self,
     address owner,
     address spender,
     uint256 amount
@@ -28,7 +28,7 @@ library StandardTokenLib {
   }
 
   function subAllowed(
-    StorageConsumerLib.Storage storage self,
+    BaseStorage self,
     address owner,
     address spender,
     uint256 amount
@@ -39,14 +39,14 @@ library StandardTokenLib {
   }
 
   function setAllowed(
-    StorageConsumerLib.Storage storage self,
+    BaseStorage self,
     address owner,
     address spender,
     uint256 amount
   )
     public 
   {
-    self.store.setUint(keccak256("allowed", owner, spender), amount);
+    self.setUint(keccak256("allowed", owner, spender), amount);
   }
 
 }

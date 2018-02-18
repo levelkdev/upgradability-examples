@@ -2,10 +2,10 @@ pragma solidity ^0.4.18;
 
 import "zeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol";
 import "zeppelin-solidity/contracts/math/SafeMath.sol";
-import "levelk-upgradability-contracts/contracts/StorageConsumer/StorageConsumerState.sol";
+import "levelk-upgradability-contracts/contracts/StorageConsumer/StorageStateful.sol";
 import "../Libraries/BasicTokenLib.sol";
 
-contract BasicTokenDelegate is StorageConsumerState, ERC20Basic {
+contract BasicTokenDelegate is StorageStateful, ERC20Basic {
  
   /**
   * @dev total number of tokens in existence

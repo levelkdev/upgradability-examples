@@ -7,14 +7,14 @@ import "./MyToken.sol";
 contract MyOwnableToken is MyToken {
 
   function MyOwnableToken(
-    BaseStorage store,
+    BaseStorage storage_,
     address delegate,
     string name,
     string symbol,
     uint8 decimals
   )
     public
-    MyToken(store, delegate, name, symbol, decimals)
+    MyToken(storage_, delegate, name, symbol, decimals)
   {}
 
   function setOwner() public {
