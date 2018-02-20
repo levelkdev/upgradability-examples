@@ -7,9 +7,9 @@ import "./DetailedToken.sol";
 
 contract MyToken is StorageConsumer, OwnableProxy, DetailedToken {
 
-  function MyToken(BaseStorage store, address delegate, string name, string symbol, uint8 decimals)
+  function MyToken(BaseStorage storage_, address delegate, string name, string symbol, uint8 decimals)
     public
-    StorageConsumer(store)
+    StorageConsumer(storage_)
     OwnableProxy(delegate)
     DetailedToken(name, symbol, decimals)
   { }

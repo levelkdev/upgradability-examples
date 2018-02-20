@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-import "levelk-upgradability-contracts/contracts/StorageConsumer/StorageConsumerState.sol";
+import "levelk-upgradability-contracts/contracts/StorageConsumer/StorageStateful.sol";
 import "../Libraries/OwnableLib.sol";
 
 /**
@@ -8,7 +8,7 @@ import "../Libraries/OwnableLib.sol";
  * @dev The OwnableDelegate contract has an owner address, and provides basic authorization control
  * functions, this simplifies the implementation of "user permissions".
  */
-contract OwnableDelegate is StorageConsumerState {
+contract OwnableDelegate is StorageStateful {
 
   event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
